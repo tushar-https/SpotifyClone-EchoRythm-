@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Audio Player</title>
+  <link rel="stylesheet" href="https://cdn.lordicon.com/libs/frhopper/lin.umd.min.css">
+</head>
+
+<body>
+  <button onclick="listSongs()">List Songs</button>
+  <ul id="songList"></ul>
+  <script>
+    const songs = [
+      { name: 'Baby Don\'t Hurt Me', artist: 'Artist 1' },
+      { name: 'Atmosphere', artist: 'Artist 2' },
+      { name: 'Alibi (feat. Rudimental)', artist: 'Artist 3' },
+      { name: 'Ameno (Techno Mix)', artist: 'Artist 4' },
+      { name: 'Baby again.', artist: 'Artist 5' }
+    ]; // Your array of song objects
+
+    function listSongs() {
+      let songList = document.getElementById('songList');
+      songList.innerHTML = '';
+      songs.forEach(song => {
+        let listItem = document.createElement('li');
+        listItem.innerHTML = `${song.name} - ${song.artist} 
+    <lord-icon
+    src="https://cdn.lordicon.com/becebamh.json"
+    trigger="hover"
+    colors="primary:#9cf4df"
+    style="width:30px;height:30px">
+    </lord-icon>`;
+        songList.appendChild(listItem);
+      });
+    }
+  </script>
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+</body>
+
+</html>
